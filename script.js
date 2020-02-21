@@ -10,6 +10,8 @@ const numEL = document.querySelector("#num");
 const lowerEL = document.querySelector("#lower");
 //const lengthEl
 
+console.log(generatePassword(12, lower));
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", function() {
   var password = generatePassword();
@@ -17,8 +19,14 @@ generateBtn.addEventListener("click", function() {
   passwordText.value = password;
 });
 
-function generatePassword() {
+function generatePassword(l, characters) {
   var letterBag = "";
+  for (var i = 0; i < l; i++) {
+    letterBag += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
+    return letterBag;
+  }
 
   debugger;
 
