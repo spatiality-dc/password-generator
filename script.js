@@ -47,6 +47,7 @@ function generatePassword() {
 lengthEl.addEventListener("change", resetMinLength);
 
 // resetMinLength function
-function resetMinLength(value) {
-  if (lengthEl.value < 8) alert("Minimum length of password is 8 character");
+function resetMinLength() {
+  if (lengthEl.value < 8) window.location.reload();
+  if (lengthEl.value > 128) window.location.reload();
 }
