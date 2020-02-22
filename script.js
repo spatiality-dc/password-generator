@@ -1,8 +1,8 @@
 //Valid password symbols
-//const lower = "abcdefghijklmnopqrstuvwxyz";
-//const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//const numbers = "0123456789";
-//const symbols = "!@#%^&*=-_";
+const lower = "abcdefghijklmnopqrstuvwxyz";
+const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numbers = "0123456789";
+const symbols = "!@#%^&*=-_";
 
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
@@ -18,19 +18,26 @@ generateBtn.addEventListener("click", function() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  var letterBag = lower;
-  numEL.checked ? (letterBag += numbers) : "";
-  upperEL.checked ? (letterBag += upper) : "";
-  symEL.checked ? (letterBag += symbols) : "";
-  newPassword.value = password(lengthEl.value, letterbag);
+  // var letterBag = lower;
+
+  // newPassword.value = password(lengthEl.value, letterbag);
 });
 
 function generatePassword() {
-  var length = 8,
-    letterBag =
-      "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!@#$%^&*",
-    retVal = "";
-  for (var i = 0, n = letterBag.length; i < length; ++i) {
+  var letterBag = lower;
+  if (numEL.checked) {
+    letterBag += numbers;
+  }
+  if (upperEL.checked) {
+    letterBag += upper;
+  }
+  if (symEL.checked) {
+    letterBag += symbols;
+  }
+  var retVal = "";
+  var n = letterBag.length;
+
+  for (var i = 0; i < lengthEl.valueAsNumber; i++) {
     retVal += letterBag.charAt(Math.floor(Math.random() * n));
   }
   return retVal;
