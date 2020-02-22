@@ -42,3 +42,11 @@ function generatePassword() {
   }
   return retVal;
 }
+
+// Minimum length event listener
+lengthEl.addEventListener("change", resetMinLength);
+
+// resetMinLength function
+function resetMinLength(value) {
+  if (lengthEl.value < 8) alert("Minimum length of password is 8 character");
+}
