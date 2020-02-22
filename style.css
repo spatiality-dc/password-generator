@@ -42,16 +42,6 @@ header {
   padding: 30px 40px;
 }
 
-.numbercheckbox {
-  width: 50%;
-  float: left;
-}
-
-.symbolscheckbox {
-  width: 50%;
-  float: right;
-}
-
 .card-header::after {
   content: " ";
   display: block;
@@ -62,6 +52,12 @@ header {
 
 .card-body {
   min-height: 100px;
+}
+
+.checkboxes {
+  display: inline;
+  width: 100%;
+  padding-right: 5px;
 }
 
 .card-footer {
@@ -137,6 +133,10 @@ button[disabled] {
 
   #password {
     font-size: 1rem;
+  }
+  .checkboxes {
+    display: block;
+    width: 100%;
   }
 }
 
