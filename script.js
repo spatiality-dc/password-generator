@@ -18,9 +18,6 @@ generateBtn.addEventListener("click", function() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-  // var letterBag = lower;
-
-  // newPassword.value = password(lengthEl.value, letterbag);
 });
 
 function generatePassword() {
